@@ -24,7 +24,7 @@ WORKDIR /app
 # Adding complete files and dirs in app dir in container
 ADD . /app/
 
-COPY nginx.default /etc/nginx/sites-available/default
+#COPY nginx.default /etc/nginx/sites-available/default
 
 # Installing dependencies
 RUN npm install 
@@ -34,5 +34,5 @@ RUN npm install cors -g
 RUN npm i -g pm2
 
 # Starting Server
-CMD ["node index.js"]
+CMD ["sh", "-c", "node", "index.js"]
 
